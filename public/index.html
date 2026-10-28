@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>📝 To Do List Manager</h1>
+
+    <form id="task-form" autocomplete="off">
+      <input type="text" id="title" placeholder="Task title *" maxlength="200" required />
+      <textarea id="description" placeholder="Description (optional)" maxlength="1000" rows="2"></textarea>
+      <div class="row">
+        <select id="priority" aria-label="Priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <input type="date" id="due_date" aria-label="Due date" />
+      </div>
+      <div class="row">
+        <button type="submit" id="submit-btn">Add Task</button>
+        <button type="button" id="cancel-btn" class="secondary" hidden>Cancel edit</button>
+      </div>
+    </form>
+
+    <div id="message" role="status"></div>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search tasks..." />
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </div>
+    </div>
+
+    <p id="stats"></p>
+    <ul id="task-list"></ul>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
